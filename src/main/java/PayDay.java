@@ -5,6 +5,7 @@
  * output: "Kris 215.00 10.75 204.25”
  */
 public class PayDay {
+
     public static void main(String[] args) {
         PayDay payday = new PayDay();
 
@@ -12,7 +13,8 @@ public class PayDay {
         outputReport.append("PayDayReport for this week\n\n");
 
         // create an array of TimeCards that have this weeks data in it.
-        // each timeCard object contains the data for one person.
+
+       // each timeCard object contains the data for one person.
         TimeCard[] cards = payday.createRunData();
 
         for (TimeCard card : cards) {
@@ -21,7 +23,7 @@ public class PayDay {
             // ... etc for the other 2 fields
 
             // you need to change the parameters on the method to take the input!
-            String result = payday.pay();
+            String result = payday.pay("Kris", 21.5, 10.0, 0.05);
 
             outputReport.append(result);
         }
@@ -37,9 +39,13 @@ public class PayDay {
      *   Notice the data type of each of the four.
      * @return a string of the form "Kris 215.00 10.75 204.25”
      */
-    private String pay() {
-
-        return "";
+    public String pay(String name, double hoursWorked,double hourlyRate,double deductionRate) {
+        String getName = name;
+        double grossIncome = hoursWorked* hourlyRate;
+        double deduction = grossIncome* deductionRate;
+        double netPay = grossIncome-deduction;
+        String ans= String.format("%s %.2f %.2f %.2f",getName,grossIncome,deduction,netPay);
+        return ans;
     }
 
 

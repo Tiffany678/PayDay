@@ -9,8 +9,8 @@
         <module name="PayDay" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="PayDay" target="18" />
+    <bytecodeTargetLevel target="11">
+      <module name="PayDay" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
