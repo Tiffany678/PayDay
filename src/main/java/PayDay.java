@@ -23,7 +23,7 @@ public class PayDay {
             // ... etc for the other 2 fields
 
             // you need to change the parameters on the method to take the input!
-            String result = payday.pay("Kris", 21.5, 10.0, 0.05);
+            String result = payday.pay(name, hoursWorked, hourlyRate, deductionRate);
 
             outputReport.append(result);
         }
